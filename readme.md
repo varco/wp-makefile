@@ -14,7 +14,7 @@ This workflow is a work in progress and offers a lot of room for improvement.
 
 ###### Example DNS entry
 	<VirtualHost *:80>
-		DocumentRoot "/Users/cactusdesign/Sites/cactus-local/sites/project-name"
+		DocumentRoot "$HOME/Sites/variables-local/sites/project-name"
    		ServerName project-name.dev
 	</VirtualHost>
 
@@ -28,8 +28,8 @@ This workflow is a work in progress and offers a lot of room for improvement.
 
 ### Set-up working directory
 	
-	mkdir $HOME/Sites/cactus-local/sites/project-name;
-	DIR=$HOME/Sites/cactus-local/sites/project-name;
+	mkdir $HOME/Sites/variables-local/sites/project-name;
+	DIR=$HOME/Sites/variables-local/sites/project-name;
 	git clone git@github.com:username/example.git ${DIR};
 	cd ${DIR};
 	make;
@@ -41,7 +41,7 @@ This workflow is a work in progress and offers a lot of room for improvement.
 
 ## Run the following shell commands on dev server:
 
-	ssh gocactus@k67f-w2wr.accessdomain.com
+	ssh variable@eugene.dreamhost.com
 
 	mysql -u 'user' -p;
 	CREATE DATABASE example_dev;
@@ -66,18 +66,3 @@ Run `make db` to configure wordpress, activate theme, plugins, and set options.
 * Import content from a production environment using a Wordpress WXR file. 
 * Run `make test` to run unit tests.
 
-###### FAQ:
-
-_Why not use Composer?_
-
-I haven't found a good way to automate changes with Composer when doing automated Git deployments. Perhaps down the road.
-
-_How do I use the bundled copy of WP-Cli?_
-
-`/wp-cli/bin/wp` is symlinked to `./wp`. You can use either command.
-
-_How do I use the bundled copy of PHPUnit?_
-
-It is included as a .PHAR file. Just run `./phpunit` or `make test`.
-
-FROM: Wordpress Makefile Workflow  https://gist.github.com/pwenzel/6091976
