@@ -5,6 +5,7 @@ This makefile automates the process of setting up a development environment from
 All dependencies, including Wordpress core and supporting plugins, are installed via the Makefile. It also bundles WP-Cli and PHPUnit in your project directory. 
 
 This workflow is a work in progress and offers a lot of room for improvement.
+Enjoy!
 
 ## Run the following shell commands locally:
 
